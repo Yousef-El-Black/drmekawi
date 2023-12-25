@@ -1,0 +1,45 @@
+/*
+  Main Color: #ffe142
+  Second Color: #002cff
+*/
+
+@import "./mixins.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+
+  @include sm {
+    width: 540px;
+  }
+
+  @include md {
+    width: 720px;
+  }
+
+  @include lg {
+    width: 960px;
+  }
+
+  @include xl {
+    width: 1140px;
+  }
+
+  @include xxl {
+    width: 1320px;
+  }
+}
