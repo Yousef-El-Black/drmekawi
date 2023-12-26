@@ -3,13 +3,18 @@
   Second Color: #002cff
 */
 
-@import "./mixins.scss";
+@import "./_mixins.scss";
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 li {
@@ -22,6 +27,7 @@ a {
 
 .container {
   width: 100%;
+  margin: auto;
 
   @include sm {
     width: 540px;

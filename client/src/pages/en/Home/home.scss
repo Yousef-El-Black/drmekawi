@@ -1,4 +1,5 @@
-@import "../../../mixins.scss";
+@import "../../../_mixins.scss";
+@import "../../../_variables.scss";
 
 .home {
   .hero {
@@ -7,11 +8,10 @@
     .header {
       height: 100px;
 
-      .container {
+      > .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: auto;
 
         .logo {
           height: 80px;
@@ -43,7 +43,7 @@
                 transition: color 0.3s;
 
                 &:hover {
-                  color: #ffe142;
+                  color: $mainColor;
                 }
               }
             }
@@ -59,7 +59,7 @@
             cursor: pointer;
 
             &:hover {
-              color: #ffe142;
+              color: $mainColor;
             }
           }
         }
@@ -103,7 +103,7 @@
               height: 2.5px;
               border-radius: 1.25px;
               width: 25px;
-              transition: 0.3s ease-in-out 0.3s;
+              transition: all 0.3s ease-in-out 0.3s;
             }
           }
 
@@ -114,6 +114,21 @@
             position: fixed;
             width: 35%;
             height: 100vh;
+            z-index: 998;
+
+            .closeMenu {
+              color: white;
+              position: absolute;
+              top: 32.5px;
+              left: 14px;
+              z-index: 999;
+              opacity: 0;
+              transition: 0.3s ease-in-out 0.5s;
+
+              &.active {
+                opacity: 1;
+              }
+            }
 
             .menuLinks {
               padding: 20px;
@@ -141,7 +156,7 @@
                   transition: color 0.3s;
 
                   &:hover {
-                    color: #ffe142;
+                    color: $mainColor;
                   }
 
                   li {
@@ -164,6 +179,47 @@
                 gap: 5px;
                 margin: auto;
                 text-transform: uppercase;
+              }
+
+              .menuSocialLinks {
+                display: flex;
+                flex-direction: column;
+                padding: 25px 0;
+                gap: 20px;
+
+                a {
+                  width: 50px;
+                  height: 50px;
+                  margin: auto;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: white;
+                  border-radius: 4px;
+                }
+
+                .facebook {
+                  background-color: #316ff6;
+                }
+
+                .twitter {
+                  background-color: #00acee;
+                }
+
+                .instagram {
+                  background: linear-gradient(
+                    45deg,
+                    #f09433 0%,
+                    #e6683c 25%,
+                    #dc2743 50%,
+                    #cc2366 75%,
+                    #bc1888 100%
+                  );
+                }
+
+                .youtube {
+                  background-color: #cd201f;
+                }
               }
             }
 
@@ -211,6 +267,276 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .content {
+      overflow: hidden;
+      height: calc(100vh - 100px);
+      color: white;
+
+      .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 50px 0;
+
+        .text {
+          h2 {
+            font-weight: 500;
+            font-size: 30px;
+            text-align: center;
+
+            @include md {
+              text-align: start;
+              font-size: 60px;
+            }
+          }
+
+          p {
+            width: 50%;
+            line-height: 1.6;
+            padding: 10px 5px;
+            display: none;
+
+            @include md {
+              display: block;
+            }
+          }
+        }
+
+        .subscribe {
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          @include md {
+            display: block;
+            margin: 0;
+          }
+
+          .btn {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+            position: relative;
+
+            button {
+              width: 200px;
+              height: 90px;
+              color: white;
+              background-color: #18191a;
+              border: 1px solid $mainColor;
+              transition: 0.3s;
+              cursor: pointer;
+              font-size: 18px;
+              border-radius: 4px;
+
+              &:hover {
+                background-color: $mainColor;
+                color: #18191a;
+              }
+            }
+
+            span {
+              transform: translateY(200px);
+              opacity: 0;
+              display: inline-block;
+              position: absolute;
+              bottom: -100%;
+              left: 0;
+              width: 200px;
+              z-index: 996;
+              text-align: center;
+              background-color: #18191a;
+              padding: 5px;
+              border-radius: 4px;
+              border: 1px solid $mainColor;
+              transition: 0.3s;
+
+              &::before {
+                content: "";
+                width: 1px;
+                height: 1px;
+                top: -50%;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                border: 20px solid transparent;
+                border-bottom: 20px solid #18191a;
+              }
+            }
+
+            &:hover span {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          > span {
+            color: $mainColor;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 20px 0;
+            position: relative;
+            margin: 10px 0;
+            display: inline-block;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 0px;
+              height: 2px;
+              background-color: $mainColor;
+              bottom: 15px;
+              left: 50%;
+              transition: 0.4s;
+              transform: translateX(-50%);
+            }
+
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+
+        form {
+          display: flex;
+          gap: 10px;
+          margin: auto;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          @include md {
+            margin: 0;
+            justify-content: start;
+          }
+
+          input {
+            width: 200px;
+            height: 50px;
+            font-size: 18px;
+            text-indent: 10px;
+            border-radius: 4px;
+            border: 1px solid $mainColor;
+            background-color: #18191a;
+            color: $mainColor;
+            outline: none;
+
+            @include md {
+              width: 280px;
+            }
+
+            &::placeholder {
+              color: $mainColor;
+              font-size: 12px;
+            }
+          }
+
+          button {
+            border: 1px solid $mainColor;
+            border-radius: 4px;
+            height: 50px;
+            padding: 0 20px;
+            background-color: $mainColor;
+            color: #18191a;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #18191a;
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+
+    > .socialLinks {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      display: none;
+
+      @include md {
+        display: block;
+      }
+
+      a {
+        color: white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .facebook {
+        background-color: #316ff6;
+        border-radius: 0 4px 0 0;
+      }
+
+      .twitter {
+        background-color: #00acee;
+      }
+
+      .instagram {
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+      }
+
+      .youtube {
+        background-color: #cd201f;
+        border-radius: 0 0 4px 0;
+      }
+    }
+
+    .help {
+      background-color: #25d366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 996;
+
+      span {
+        position: absolute;
+        right: calc(100% + 10px);
+        display: inline-block;
+        width: 85px;
+        font-size: 12px;
+        padding: 5px;
+        border-radius: 2px;
+        text-align: center;
+        background-color: #18191a;
+        transform: translateY(200px);
+        opacity: 0;
+        transition: 0.3s;
+      }
+
+      &:hover span {
+        transform: translate(0);
+        opacity: 1;
       }
     }
   }
