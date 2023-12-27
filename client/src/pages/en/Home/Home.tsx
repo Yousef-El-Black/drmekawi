@@ -7,11 +7,14 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import { useState } from "react";
-import Preloader from "../../../components/Preloader";
+import Preloader from "../../../components/Preloader/Preloader";
+import Footer from "../../../components/Footer/Footer";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isIframeOpen, setIsIframeOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,6 +22,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Preloader />
       <section className="hero">
         <div className="header">
           <div className="container">
@@ -145,7 +149,7 @@ const Home = () => {
                   Video call between you and Mekawi, Just both of you.
                 </span>
               </div>
-              <span>How to Subscribe!</span>
+              <a href={"#howToSubscribe"}>How to Subscribe!</a>
             </div>
             <form>
               <input
@@ -197,8 +201,35 @@ const Home = () => {
           <span>Ask For Help!</span>
         </Link>
       </section>
-      <section style={{ height: "100vh" }}></section>
-      <Preloader />
+      <section id="howToSubscribe" className="howToSubscribe">
+        <div className="head">
+          <h3>How To Subscribe</h3>
+          <hr />
+        </div>
+        <div className="body">
+          <div className="thunbnail" onClick={() => setIsIframeOpen(true)}>
+            <img src="assets/howtosubscribethunbnail.webp" alt="" />
+            <PlayCircleOutlineIcon fontSize="large" />
+          </div>
+        </div>
+        <div className={`subscribeVideo ${isIframeOpen ? "active" : ""}`}>
+          <iframe
+            title="How To Subscribe"
+            src="https://www.youtube.com/embed/FI4qUN2cxG8"
+          ></iframe>
+          <div
+            className="subscribeOverlay"
+            onClick={() => setIsIframeOpen(false)}
+          ></div>
+          <div
+            className="subscribeClose"
+            onClick={() => setIsIframeOpen(false)}
+          >
+            <CloseIcon />
+          </div>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 };

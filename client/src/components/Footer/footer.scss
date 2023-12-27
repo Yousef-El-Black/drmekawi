@@ -1,0 +1,20 @@
+@import "../../variables";
+
+footer {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $backColor;
+  color: white;
+
+  a {
+    margin-left: 5px;
+    color: white;
+    transition: 0.3s;
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+}
