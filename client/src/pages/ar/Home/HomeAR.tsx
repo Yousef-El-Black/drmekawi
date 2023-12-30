@@ -119,11 +119,11 @@ const HomeAR = () => {
                   <li>المنتجات المفضله</li>
                 </Link>
               </ul>
-              <div className="lang">
+              <Link to={"/en"} className="lang">
                 <LanguageIcon />
                 {/* Ar to En TOGGLE */}
-                <Link to={"/en"}>en</Link>
-              </div>
+                <span >en</span>
+              </Link>
             </div>
           </div>
         </div>

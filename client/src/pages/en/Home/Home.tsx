@@ -118,11 +118,11 @@ const Home = () => {
                   <li>Favorite Products</li>
                 </Link>
               </ul>
-              <div className="lang">
+              <Link to={"/ar"} className="lang">
                 <LanguageIcon />
                 {/* Ar to En TOGGLE */}
-                <Link to={"/ar"}>ar</Link>
-              </div>
+                <span >ar</span>
+              </Link>
             </div>
           </div>
         </div>
