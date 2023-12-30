@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./preloader.scss";
 
-const Preloader = () => {
+const Preloader = ({isLoading}:{isLoading: boolean}) => {
   const [activePreloader, setActivePreloader] = useState<boolean>(true);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const Preloader = () => {
   }, []);
 
   return (
-    <div className={`preloader ${activePreloader ? "active" : ""}`}>
+    <div className={`preloader ${isLoading? "active" : ""}`}>
       <img src="assets/logo.webp" alt="" />
     </div>
   );

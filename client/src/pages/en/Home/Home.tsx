@@ -8,21 +8,26 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Preloader from "../../../components/Preloader/Preloader";
 import Footer from "../../../components/Footer/Footer";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isIframeOpen, setIsIframeOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
+
   return (
     <div className="home">
-      <Preloader />
+      <Preloader isLoading={isLoading}/>
       <section className="hero">
         <div className="header">
           <div className="container">
