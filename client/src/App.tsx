@@ -1,5 +1,6 @@
 import Redirect from "./pages/Redirect";
 import Home from "./pages/en/Home/Home";
+import HomeAR from "./pages/ar/Home/HomeAR";
 import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/en",
     element: <Home />,
+  },
+  {
+    path: "/ar",
+    element: <HomeAR />,
   },
 ]);
 

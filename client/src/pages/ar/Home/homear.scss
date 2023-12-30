@@ -1,9 +1,10 @@
 @import "../../../_mixins.scss";
 @import "../../../_variables.scss";
 
-.home {
+.homear {
   * {
-    direction: ltr;
+
+    direction: rtl;
   }
 
   .hero {
@@ -62,7 +63,7 @@
             transition: color 0.3s;
             cursor: pointer;
 
-            a{
+            a {
               color: white;
               &:hover {
                 color: $mainColor;

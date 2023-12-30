@@ -1,4 +1,4 @@
-import "./home.scss";
+import "./homear.scss";
 import { Link } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import CloseIcon from "@mui/icons-material/Close";
@@ -12,7 +12,7 @@ import { useState } from "react";
 import Preloader from "../../../components/Preloader/Preloader";
 import Footer from "../../../components/Footer/Footer";
 
-const Home = () => {
+const HomeAR = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isIframeOpen, setIsIframeOpen] = useState<boolean>(false);
 
@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className="homear">
       <Preloader />
       <section className="hero">
         <div className="header">
@@ -104,19 +104,19 @@ const Home = () => {
             <div className="links">
               <ul>
                 <Link to={"/en/aboutus"}>
-                  <li>About Us</li>
+                  <li>مين مكاوي</li>
                 </Link>
                 <Link to={"/en/videos"}>
-                  <li>Our Videos</li>
+                  <li>الفيديوهات</li>
                 </Link>
                 <Link to={"/en/favproducts"}>
-                  <li>Favorite Products</li>
+                  <li>المنتجات المفضله</li>
                 </Link>
               </ul>
               <div className="lang">
                 <LanguageIcon />
                 {/* Ar to En TOGGLE */}
-                <Link to={"/ar"}>ar</Link>
+                <Link to={"/en"}>en</Link>
               </div>
             </div>
           </div>
@@ -134,31 +134,28 @@ const Home = () => {
         <div className="content">
           <div className="container">
             <div className="text">
-              <h2>Stay in your Position, I'll keep it!</h2>
+              <h2>خليك على وضعك غصب عنك!</h2>
               <p>
-                If you have a problem or want to improve yourself or your
-                health, or you have a problem and need an expert to advise you,
-                now you can contact Makkawi personally and ask him everything
-                you want, and he will answer all your questions.
+                لو عندك مشكله او عايز تحسن من نفسك او صحتك او عايز حد ينصحك تقدر
+                دلوقتي تتواصل مع مكاوي شخصيا وتسأله اللي انت عايزه وهو هيجاوب
+                على كل اسئلتك.
               </p>
             </div>
             <div className="subscribe">
               <div className="btn">
-                <button>Individual training (Once)</button>
-                <span>
-                  Video call between you and Mekawi, Just both of you.
-                </span>
+                <button>التدريب الفردي (مره واحده)</button>
+                <span>مكالمه فيدبو بينك وبين مكاوي فقط</span>
               </div>
-              <a href={"#howToSubscribe"}>How to Subscribe!</a>
+              <a href={"#howToSubscribe"}>لمعرفه طريقه الاشتراك</a>
             </div>
             <form>
               <input
                 type="email"
-                placeholder="Write your Email for new Offers"
+                placeholder="اكتب بريدك الالكتروني لتلقي كل جديد"
                 required
                 name="email"
               />
-              <button>Send</button>
+              <button>ارسال</button>
             </form>
           </div>
         </div>
@@ -198,12 +195,12 @@ const Home = () => {
           className="help"
         >
           <WhatsAppIcon fontSize="large" />
-          <span>Ask For Help!</span>
+          <span>للمساعده</span>
         </Link>
       </section>
       <section id="howToSubscribe" className="howToSubscribe">
         <div className="head">
-          <h3>How To Subscribe</h3>
+          <h3>طريقه الاشتراك</h3>
           <hr />
         </div>
         <div className="body">
@@ -234,4 +231,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeAR;
