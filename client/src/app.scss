@@ -4,6 +4,7 @@
 */
 
 @import "./_mixins.scss";
+@import "./_variables.scss";
 
 * {
   padding: 0;
@@ -15,6 +16,28 @@
 
 body {
   overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $backColor;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $mainColor;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
 }
 
 li {

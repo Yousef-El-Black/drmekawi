@@ -22,12 +22,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    setIsLoading(false)
-  }, [])
+    setIsLoading(false);
+  }, []);
 
   return (
     <div className="home">
-      <Preloader isLoading={isLoading}/>
+      <Preloader isLoading={isLoading} />
       <section className="hero">
         <div className="header">
           <div className="container">
@@ -40,7 +40,7 @@ const Home = () => {
                 <span></span>
                 <span></span>
               </div>
-              <div className="menuBody">
+              <div className={`menuBody ${isMenuOpen ? "active" : ""}`}>
                 <div
                   className={`closeMenu ${isMenuOpen ? "active" : ""}`}
                   onClick={toggleMenu}
@@ -104,7 +104,7 @@ const Home = () => {
               </div>
             </div>
             <div className="logo">
-              <img src="assets/logo.webp" alt="" className="logo" />
+              <img src="/assets/logo.webp" alt="" className="logo" />
             </div>
             <div className="links">
               <ul>
@@ -121,14 +121,14 @@ const Home = () => {
               <Link to={"/ar"} className="lang">
                 <LanguageIcon />
                 {/* Ar to En TOGGLE */}
-                <span >ar</span>
+                <span>ar</span>
               </Link>
             </div>
           </div>
         </div>
         <div className="backvideo">
           <video
-            src="assets/hero-mekawi.mp4"
+            src="/assets/hero-mekawi.mp4"
             muted
             controls={false}
             autoPlay
@@ -213,7 +213,7 @@ const Home = () => {
         </div>
         <div className="body">
           <div className="thunbnail" onClick={() => setIsIframeOpen(true)}>
-            <img src="assets/howtosubscribethunbnail.webp" alt="" />
+            <img src="/assets/howtosubscribethunbnail.webp" alt="" />
             <PlayCircleOutlineIcon fontSize="large" />
           </div>
         </div>

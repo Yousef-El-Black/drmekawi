@@ -3,7 +3,7 @@
 
 .homear {
   * {
-    font-family: 'Cairo', sans-serif;
+    font-family: "Cairo", sans-serif;
     direction: rtl;
   }
 
@@ -127,6 +127,11 @@
             width: 35%;
             height: 100vh;
             z-index: 998;
+            transform: translateX(-100%);
+
+            &.active {
+              transform: translateX(-0);
+            }
 
             .closeMenu {
               color: white;

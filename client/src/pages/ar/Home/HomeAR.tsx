@@ -17,18 +17,17 @@ const HomeAR = () => {
   const [isIframeOpen, setIsIframeOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
-    setIsLoading(false)
-  }, [])
+    setIsLoading(false);
+  }, []);
 
   return (
     <div className="homear">
-      <Preloader isLoading={isLoading}/>
+      <Preloader isLoading={isLoading} />
       <section className="hero">
         <div className="header">
           <div className="container">
@@ -41,7 +40,7 @@ const HomeAR = () => {
                 <span></span>
                 <span></span>
               </div>
-              <div className="menuBody">
+              <div className={`menuBody ${isMenuOpen ? "active" : ""}`}>
                 <div
                   className={`closeMenu ${isMenuOpen ? "active" : ""}`}
                   onClick={toggleMenu}
@@ -109,20 +108,20 @@ const HomeAR = () => {
             </div>
             <div className="links">
               <ul>
-                <Link to={"/en/aboutus"}>
+                <Link to={"/ar/aboutus"}>
                   <li>مين مكاوي</li>
                 </Link>
-                <Link to={"/en/videos"}>
+                <Link to={"/ar/videos"}>
                   <li>الفيديوهات</li>
                 </Link>
-                <Link to={"/en/favproducts"}>
+                <Link to={"/ar/favproducts"}>
                   <li>المنتجات المفضله</li>
                 </Link>
               </ul>
               <Link to={"/en"} className="lang">
                 <LanguageIcon />
                 {/* Ar to En TOGGLE */}
-                <span >en</span>
+                <span>en</span>
               </Link>
             </div>
           </div>

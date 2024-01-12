@@ -12,3 +12,17 @@
     opacity: 0.25;
   }
 }
+
+@keyframes goRtLt {
+  0%,
+  5% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-100% + 100vw));
+  }
+  95%,
+  100% {
+    transform: translateX(0);
+  }
+}
