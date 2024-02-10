@@ -18,7 +18,7 @@ const HeaderAR = () => {
   const location = useLocation();
 
   return (
-    <header className="header">
+    <header className="headerar">
       <div className="container">
         <div className={`menu ${isMenuOpen ? "active" : ""}`}>
           <div
@@ -38,13 +38,13 @@ const HeaderAR = () => {
             </div>
             <div className={`menuLinks ${isMenuOpen ? "active" : ""}`}>
               <ul>
-                <Link to={"/en/aboutus"}>
+                <Link to={"/ar/aboutus"}>
                   <li>مين مكاوي</li>
                 </Link>
-                <Link to={"/en/videos"}>
+                <Link to={"/ar/videos"}>
                   <li>الفيديوهات</li>
                 </Link>
-                <Link to={"/en/favproducts"}>
+                <Link to={"/ar/favproducts"}>
                   <li>المنتجات المفضله</li>
                 </Link>
               </ul>
@@ -100,13 +100,13 @@ const HeaderAR = () => {
         </Link>
         <div className="links">
           <ul>
-            <Link to={"/en/aboutus"}>
+            <Link to={"/ar/aboutus"}>
               <li>مين مكاوي</li>
             </Link>
-            <Link to={"/en/videos"}>
+            <Link to={"/ar/videos"}>
               <li>الفيديوهات</li>
             </Link>
-            <Link to={"/en/favproducts"}>
+            <Link to={"/ar/favproducts"}>
               <li>المنتجات المفضله</li>
             </Link>
           </ul>

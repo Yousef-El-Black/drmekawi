@@ -5,6 +5,7 @@ import AboutAR from "./pages/ar/About/AboutAR";
 import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/en/About/About";
+import Videos from "./pages/en/Videos/Videos";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/ar/aboutus",
     element: <AboutAR />,
+  },
+  {
+    path: "/en/videos",
+    element: <Videos />,
   },
 ]);
 

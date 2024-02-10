@@ -1,9 +1,10 @@
 @import "../../../mixins.scss";
 @import "../../../variables.scss";
 
-header {
+.header {
   height: 80px;
   background: $backColor;
+  direction: ltr;
 
   > .container {
     height: 100%;
