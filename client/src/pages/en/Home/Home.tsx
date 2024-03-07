@@ -29,7 +29,7 @@ const Home = () => {
     <div className="home">
       <Preloader isLoading={isLoading} />
       <section className="hero">
-        <div className="header">
+        <div className="header" style={{ backgroundColor: "transparent" }}>
           <div className="container">
             <div className={`menu ${isMenuOpen ? "active" : ""}`}>
               <div

@@ -6,6 +6,8 @@ import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/en/About/About";
 import Videos from "./pages/en/Videos/Videos";
+import VideosAR from "./pages/ar/Videos/VideosAR";
+import FavProducts from "./pages/en/FavoriteProducts/FavProducts";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/en/videos",
     element: <Videos />,
+  },
+  {
+    path: "/ar/videos",
+    element: <VideosAR />,
+  },
+  {
+    path: "/en/favproducts",
+    element: <FavProducts />,
   },
 ]);
 

@@ -1,4 +1,4 @@
-import "./videos.scss";
+import "./videosar.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import url from "url";
@@ -11,6 +11,7 @@ import axios from "axios";
 // import youtubeSearch from "youtube-search-no-api-key";
 import Header from "../../../components/en/Header/Header";
 import Footer from "../../../components/Footer/Footer";
+import HeaderAR from "../../../components/ar/Header/HeaderAR";
 // import * as yt from "youtube-search-without-api-key";
 
 const testVideos = [
@@ -25,7 +26,7 @@ const testVideos = [
     publishedAt: "2024-02-08T12:00:03Z",
     thumbnails: { default: "/assets/images/imekawi-20231230-0049.jpg" },
     title:
-      "كيف تصبح جذاب بين الناس ؟ 3 أسرار راح تخليasdasdasdك صاحب هيبة وجاذبية !!",
+      "كيف تصبح جذاب بين الناس ؟ 3 أسرار رsadsdasdasاح تخليك صاحب هيبة وجاذبية !!",
   },
   {
     channelId: "UCHu-IqjANYtsjRglHbg84kw",
@@ -161,7 +162,7 @@ const testVideos = [
   },
 ];
 
-const Videos = () => {
+const VideosAR = () => {
   const [videos, setVideos] = useState<any>([]);
 
   // useEffect(() => {
@@ -181,8 +182,8 @@ const Videos = () => {
   // }, []);
 
   return (
-    <div className="videosPage">
-      <Header />
+    <div className="videosPageAr">
+      <HeaderAR />
       <div className="content">
         <div className="container">
           {testVideos.map((item: any) => {
@@ -200,13 +201,13 @@ const Videos = () => {
           })}
         </div>
       </div>
-      \
+
       <Footer />
     </div>
   );
 };
 
-export default Videos;
+export default VideosAR;
 
 /*
 channelId: "UCHu-IqjANYtsjRglHbg84kw"
