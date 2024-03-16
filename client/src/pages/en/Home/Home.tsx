@@ -82,14 +82,14 @@ const Home = () => {
                       <TwitterIcon fontSize="large" />
                     </Link>
                     <Link
-                      to={"https://www.youtube.com/c/imekawi"}
+                      to={"https://www.instagram.com/imekawi/"}
                       target="_blanc"
                       className="instagram"
                     >
                       <InstagramIcon fontSize="large" />
                     </Link>
                     <Link
-                      to={"https://www.instagram.com/imekawi/"}
+                      to={"https://www.youtube.com/c/imekawi"}
                       target="_blanc"
                       className="youtube"
                     >
@@ -149,7 +149,9 @@ const Home = () => {
             </div>
             <div className="subscribe">
               <div className="btn">
-                <button>Individual training (Once)</button>
+                <Link to={"/en/single-consultation"}>
+                  <button>Individual training (Once)</button>
+                </Link>
                 <span>
                   Video call between you and Mekawi, Just both of you.
                 </span>
@@ -183,14 +185,14 @@ const Home = () => {
             <TwitterIcon />
           </Link>
           <Link
-            to={"https://www.youtube.com/c/imekawi"}
+            to={"https://www.instagram.com/imekawi/"}
             target="_blanc"
             className="instagram"
           >
             <InstagramIcon />
           </Link>
           <Link
-            to={"https://www.instagram.com/imekawi/"}
+            to={"https://www.youtube.com/c/imekawi"}
             target="_blanc"
             className="youtube"
           >

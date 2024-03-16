@@ -1,0 +1,80 @@
+@import "../../../mixins";
+@import "../../../variables";
+
+.favProductsAr {
+  direction: rtl;
+  .content {
+    min-height: calc(100vh - 119px);
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      gap: 20px;
+
+      .productItem {
+        display: flex;
+        height: 220px;
+        width: 100%;
+        flex-direction: column;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+        @include md {
+          flex-direction: row;
+        }
+
+        .img {
+          height: 220px;
+          overflow: hidden;
+          border-radius: 5px;
+          aspect-ratio: 16/9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+
+          @include md {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+          }
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+        flex: 1;
+        margin: 10px;
+
+        .title {
+          font-weight: 500;
+        }
+
+        a {
+          button {
+            background-color: white;
+            border-radius: 0;
+            padding: 10px 20px;
+            border: 1px solid $backColor;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $mainColor;
+              color: white;
+              border: 1px solid $mainColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

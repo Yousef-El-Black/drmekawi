@@ -8,6 +8,8 @@ import About from "./pages/en/About/About";
 import Videos from "./pages/en/Videos/Videos";
 import VideosAR from "./pages/ar/Videos/VideosAR";
 import FavProducts from "./pages/en/FavoriteProducts/FavProducts";
+import FavProductsAR from "./pages/ar/FavoriteProducts/FavProductsAR";
+import SingleConsultation from "./pages/en/SingleConsultation/SingleConsultation";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
     path: "/en/favproducts",
     element: <FavProducts />,
   },
+  {
+    path: "/ar/favproducts",
+    element: <FavProductsAR />,
+  },
+  {
+    path: "/en/single-consultation",
+    element: <SingleConsultation/>
+  }
 ]);
 
 function App() {

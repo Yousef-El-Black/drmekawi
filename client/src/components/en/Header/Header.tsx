@@ -74,14 +74,14 @@ const Header = () => {
                   <TwitterIcon fontSize="large" />
                 </Link>
                 <Link
-                  to={"https://www.youtube.com/c/imekawi"}
+                  to={"https://www.instagram.com/imekawi/"}
                   target="_blanc"
                   className="instagram"
-                >
+                  >
                   <InstagramIcon fontSize="large" />
                 </Link>
                 <Link
-                  to={"https://www.instagram.com/imekawi/"}
+                  to={"https://www.youtube.com/c/imekawi"}
                   target="_blanc"
                   className="youtube"
                 >
