@@ -1,5 +1,5 @@
 import "./home.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import CloseIcon from "@mui/icons-material/Close";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -20,6 +20,9 @@ const Home = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const location = useLocation();
+
 
   useEffect(() => {
     setIsLoading(false);
@@ -60,11 +63,11 @@ const Home = () => {
                     </Link>
                   </ul>
                   <hr />
-                  <div className="menuLang">
+                  <Link className="menuLang" to={location.pathname.replace("/en", "/ar")}>
                     <LanguageIcon />
                     {/* Ar to En TOGGLE */}
                     <span>ar</span>
-                  </div>
+                  </Link>
                   <hr />
                   <div className="menuSocialLinks">
                     <Link

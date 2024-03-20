@@ -1,5 +1,5 @@
 import "./homear.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import CloseIcon from "@mui/icons-material/Close";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -20,6 +20,9 @@ const HomeAR = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const location = useLocation();
+
 
   useEffect(() => {
     setIsLoading(false);
@@ -50,21 +53,21 @@ const HomeAR = () => {
                 <div className={`menuLinks ${isMenuOpen ? "active" : ""}`}>
                   <ul>
                     <Link to={"/en/aboutus"}>
-                      <li>About Us</li>
+                      <li>مين مكاوي</li>
                     </Link>
                     <Link to={"/en/videos"}>
-                      <li>Our Videos</li>
+                      <li>الفيديوهات</li>
                     </Link>
                     <Link to={"/en/favproducts"}>
-                      <li>Favorite Products</li>
+                      <li>المنتجات المفضله</li>
                     </Link>
                   </ul>
                   <hr />
-                  <div className="menuLang">
+                  <Link to={location.pathname.replace("/ar", "/en/")} className="menuLang">
                     <LanguageIcon />
                     {/* Ar to En TOGGLE */}
-                    <span>ar</span>
-                  </div>
+                    <span>en</span>
+                  </Link>
                   <hr />
                   <div className="menuSocialLinks">
                     <Link
@@ -104,7 +107,7 @@ const HomeAR = () => {
               </div>
             </div>
             <div className="logo">
-              <img src="assets/logo.webp" alt="" className="logo" />
+              <img src="/assets/logo.webp" alt="" className="logo" />
             </div>
             <div className="links">
               <ul>
@@ -128,7 +131,7 @@ const HomeAR = () => {
         </div>
         <div className="backvideo">
           <video
-            src="assets/hero-mekawi.mp4"
+            src="/assets/hero-mekawi.mp4"
             muted
             controls={false}
             autoPlay
@@ -210,7 +213,7 @@ const HomeAR = () => {
         </div>
         <div className="body">
           <div className="thunbnail" onClick={() => setIsIframeOpen(true)}>
-            <img src="assets/howtosubscribethunbnail.webp" alt="" />
+            <img src="/assets/howtosubscribethunbnail.webp" alt="" />
             <PlayCircleOutlineIcon fontSize="large" />
           </div>
         </div>

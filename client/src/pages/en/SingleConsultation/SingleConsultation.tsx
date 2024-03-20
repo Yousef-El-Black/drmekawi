@@ -7,7 +7,9 @@ const SingleConsultation = () => {
   return (
     <div className="singleConsultation">
       <Header/>
-      <div className="container"></div>
+      <div className="container"> 
+      
+      </div>
       <Footer/>
     </div>
   )
